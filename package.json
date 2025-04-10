@@ -1,24 +1,37 @@
 {
   "name": "derick",
+  "private": true,
   "version": "0.0.0",
-  "description": "Derick App",
-  "homepage": "https://github.com/Clockwork-Rat/Derick#readme",
-  "bugs": {
-    "url": "https://github.com/Clockwork-Rat/Derick/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Clockwork-Rat/Derick.git"
-  },
-  "license": "ISC",
-  "author": "Clockwork-Rat, MKim6993",
-  "type": "commonjs",
-  "main": "main.js",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "description": "Sup",
+  "author": "Brevin Productions",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "dev:react": "vite",
+    "dev:electron": "electron .",
+    "build": "vite build",
+    "build:electron": "node ./copy-electron-files.js",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "dist:mac": "npm run build:electron && npm run build && electron-builder --mac --arm64",
+    "dist:linux": "npm run build:electron && npm run build && electron-builder --linux --x64",
+    "dist:win": "npm run build:electron && npm run build && electron-builder --win --x64"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "electron": "^35.1.5"
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^35.1.5",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "vite": "^6.2.0"
   }
 }

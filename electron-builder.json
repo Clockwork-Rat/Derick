@@ -1,0 +1,15 @@
+{
+    "appId": "com.brevin-production.derick",
+    "files": ["dist-electron", "dist-react"],
+    "icon": "./StuffIcon.png",
+    "mac": {
+        "target": "dmg"
+    },
+    "linux": {
+        "target": "AppImage",
+        "category": "Utility"
+    },
+    "win": {
+        "target": ["portable", "msi"]
+    }
+}
