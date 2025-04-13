@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+service BudgetInfo {
+    rpc GetBudgetSplit(BudgetSplitRequest) returns (BudgetSplit) {}
+}
+
+message BudgetSplitRequest {
+    float want_percent = 1;
+    float need_percent = 2;
+    double total_income = 3;
+    bool taxes = 4;
+}
+
+message BudgetSplit {
+    float wants = 1;
+    float needs = 2;
+    float savings = 3;
+    float taxes = 4;
+}
